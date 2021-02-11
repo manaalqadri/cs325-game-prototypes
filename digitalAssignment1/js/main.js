@@ -15,50 +15,109 @@ class MyScene extends Phaser.Scene {
     
     constructor() {
         super();
-        
-        this.bouncy = null;
+
+        this.score = 0;
     }
     
     preload() {
         // Load an image and call it 'logo'.
-        this.load.image( 'logo', 'assets/hijabimoon-avatar.png' );
+        this.load.image( 'crate', 'assets/hijabimoon-pixel.png');
+        this.load.image('target', 'assets/hijabiBLUEmoon-pixel.png');
     }
     
     create() {
-        // Create a sprite at the center of the screen using the 'logo' image.
-        this.bouncy = this.physics.add.sprite( this.cameras.main.centerX, this.cameras.main.centerX, 'logo' );
-        
-        // Make it bounce off of the world bounds.
-        this.bouncy.body.collideWorldBounds = true;
-        
-        // Make the camera shake when clicking/tapping on it.
-        this.bouncy.setInteractive();
-        this.bouncy.on( 'pointerdown', function( pointer ) {
+        //  Store the score and lives in the Game Registry
+        this.registry.set('score', this.score);
+
+        for (let i = 0; i < 30; i++)
+        {
+            let x = Phaser.Math.Between(0, 800);
+            let y = Phaser.Math.Between(0, 600);
+
+            this.yellow = this.add.sprite(x, y, 'crate').setInteractive();
+        }
+
+        for (let i = 0; i < 30; i++)
+        {
+            let x = Phaser.Math.Between(0, 800);
+            let y = Phaser.Math.Between(0, 600);
+
+           this.blue = this.add.sprite(x, y, 'target').setInteractive();
+        }
+
+        for (let i = 0; i < 1; i++)
+        {
+            let x = Phaser.Math.Between(0, 800);
+            let y = Phaser.Math.Between(0, 600);
+
+           this.target = this.add.sprite(x, y, 'target').setInteractive();
+        }
+
+        this.target.on( 'pointerdown', function( pointer ) {
             this.scene.cameras.main.shake(500);
             });
+
+        this.input.on('gameobjectup', this.clickHandler, this);
         
-        // Add some text using a CSS style.
-        // Center it in X, and position its top 15 pixels from the top of the world.
-        let style = { font: "25px Verdana", fill: "#B064A7", align: "center" };
-        let text = this.add.text( this.cameras.main.centerX, 15, "Hello, Manaal", style );
-        text.setOrigin( 0.5, 0.0 );
+
     }
-    
-    update() {
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        this.bouncy.rotation = this.physics.accelerateToObject( this.bouncy, this.input.activePointer, 500, 500, 500 );
+
+    clickHandler (pointer, box)
+    {
+        //  Disable our box
+        box.input.enabled = false;
+        box.setVisible(false);
+
+        if (this.key === 'crate')
+        {
+            this.score++;
+            this.registry.set('score', this.score);
+        }
+        else
+        {
+            this.score--;
+            this.registry.set('score', this.score);
+        }
+    }
+
+
+}
+class SceneB extends Phaser.Scene {
+
+    constructor ()
+    {
+        super({ key: 'UIScene', active: true });
+
+        this.scoreText;
+        this.livesText;
+    }
+
+    create ()
+    {
+        //  Our Text object to display the Score
+        this.scoreText = this.add.text(10, 10, 'Score: 0', { font: '32px Arial', fill: '#ffffff' });
+
+        //  Check the Registry and hit our callback every time the 'score' value is updated
+        this.registry.events.on('changedata', this.updateData, this);
+    }
+
+    updateData (parent, key, data)
+    {
+        if (key === 'score')
+        {
+            this.scoreText.setText('Score: ' + data);
+        }
+        else if (key === 'lives')
+        {
+            this.livesText.setText('Lives: ' + data);
+        }
     }
 }
-
 const game = new Phaser.Game({
     type: Phaser.AUTO,
     parent: 'game',
     width: 800,
     height: 600,
-    scene: MyScene,
-    physics: { default: 'arcade' },
+    backgroundColor: '#000000',
+    scene: [MyScene, SceneB],
     });
