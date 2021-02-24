@@ -22,19 +22,28 @@ class MyScene extends Phaser.Scene
     preload() 
     {
         this.load.image('ground', 'assets/ground.png');
+        this.load.image('coins', 'assets/coins.png');
         this.load.spritesheet('player', 'assets/player.png', { frameWidth: 321, frameHeight: 400 });
-        this.load.image('bkgd', 'assets/bkgd.png');
+        this.load.image('bg', 'assets/bkgd.png');
+        this.load.image('sun', 'assets/sun.png');
+        this.load.image('clouds', 'assets/clouds.png');
+        this.load.image('cave', 'assets/skullocto.png');
     }
     
     create() 
     {
-        this.add.image(700, 300, 'bkgd');
-       
+        this.cameras.main.setBounds(1, 1, 6000, 600);
+        this.physics.world.setBounds(0, 0, 6000, 600);
+
+        this.add.image(0, 0, 'bg').setOrigin(0).setScrollFactor(0);
+        this.add.image(0, 0, 'sun').setOrigin(0).setScrollFactor(0.1);
+        this.add.image(0, 0, 'clouds').setOrigin(0).setScrollFactor(0.45);
+        this.add.image(5510, 0, 'cave').setOrigin(0);
+
         platforms = this.physics.add.staticGroup();
-        platforms.create(400, 600, 'ground').refreshBody();
+        platforms.create(3000, 600, 'ground').refreshBody();
                
   
-
         // Animation set
         this.anims.create({
             key: 'walk',
@@ -49,9 +58,9 @@ class MyScene extends Phaser.Scene
             frameRate: 10,
         });
 
-        player = this.physics.add.sprite(100, 540, 'player');
-        player.body.setGravityY(300)
-        player.body.setSize(player.width, player.height-420);
+        player = this.physics.add.sprite(200, 540, 'player');
+        player.body.setGravityY(300);
+        player.body.setSize(player.width-200, player.height-370);
 
         player.setBounce(0.2);
         player.setCollideWorldBounds(true);
@@ -60,24 +69,29 @@ class MyScene extends Phaser.Scene
         player.play('walk');
         cursors = this.input.keyboard.createCursorKeys();
 
-        this.add.image(400,600, 'ground')
-        this.add.image(400,550, 'ground');
-        this.add.image(400,500, 'ground')
-        this.add.image(400,450, 'ground')
+        this.add.image(3000,600, 'ground');
+        this.add.image(3000,550, 'ground');
+        this.add.image(3000,500, 'ground');
+        this.add.image(3000,450, 'ground');
+
+        
+
+        this.cameras.main.startFollow(player, true, 0.05, 0.05);
+        this.cameras.main.followOffset.set(-300, 0);
     }
     
     update() 
     {
         if (cursors.left.isDown)
         {
-            player.setVelocityX(-160);
+            player.setVelocityX(-200);
 
             player.anims.play('walk', true);
             player.flipX = true;
         }
         else if (cursors.right.isDown)
         {
-            player.setVelocityX(160);
+            player.setVelocityX(200);
 
             player.anims.play('walk', true);
             player.flipX = false;
@@ -94,6 +108,7 @@ class MyScene extends Phaser.Scene
             player.setVelocityY(-330);
         }
     }
+
 }
 
 const game = new Phaser.Game(
@@ -109,3 +124,4 @@ const game = new Phaser.Game(
 var platforms;
 var player;
 var cursors;
+var coins;
