@@ -1,92 +1,86 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Hello! Amaze!</title>
-<style>
-body
-{
-    color: #777;
-    font-family: "Avenir", Verdana, sans-serif;
-}
-#readme
-{
-    margin-top: 10px;
-}
-</style>
-</head>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="da3.css">
 
-<body>
-<div id="game"></div>
+            <title>DA3: Pirates!</title>
+        </head>
+
+        <body>
+            <div id="game"></div>
+            
+            <h2>Pirate Island</h2>
+
+                    
+
+
+
+
 <div id="readme">
-<h2>Your game title</h2>
+    <h3>Originality</h3>
+    <li>This uses the "First Game" example. I used the base code to get the coins to disable when overlapped with the ship, After that, the concept in making the ship jump with the water was my own. I played around with the physics and overlaying images so that the wave was hidden under the ship. Unfortunately, the wave can collect the coins along with the ship. That was not what I was tring to do but became a byproduct of the implementation.</li>
 
-<ul>
-<li><strong>Originality:</strong>
-What is original about your game?
-</li>
+    <h3>Technical Merit</h3>
+    <li>Camera follows the player, there's a parallax on the background, the coins float and are auto generated, and the player can only move in one direction</li>
 
-<li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
-</li>
+    <h3>Prototype Postmortem:</h3>
+    I learned how to get the camera to follow the sprite as well as make prallax backgrounds so the game looked like it had more depth.
+    The parallaz was the easiest part of the game. It was one function connected to the images. The hardest was getting the coins to disappear and collect the score
+    </li>
 
-<li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype? I learned how to create and manipulate sprites and their animations
-What was the easiest or hardest part of making it? The easiest part was creating the art, the hardest was trying to get the system to recognixe the sprite sizes. The template had them bigger, and I wanted them to be a bit smaller.
-</li>
+    <h3>Prototype Assets:</h3>
+    <ul>
+    <li>Amalgamation of the different Phaser Examples until it all works together</li>
+    <li>Art is all unique (made by myself)</li>
+    <li>Code based on "First Game" from Phaser</li>
+    </ul>
+    </li>
 
-<li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
-<ul>
-<li>Amalgamation of the different Phaser Examples until it all works together</li>
-</ul>
-</li>
+    <li><strong>Prototype Closest Other Game:</strong>
+    </li>
 
-<li><strong>Prototype Closest Other Game:</strong>
-    <li>Scroll World: <a href="hhttps://labs.phaser.io/view.html?src=src/camera/follow%20zoom%20tilemap.js">"Follow Zoom Tilemap</a></li>
-</li>
+    <li><strong>High Concept:</strong>
+    Help the pirates collect coins and get back home to Skullocto Island
+    </li>
 
-<li><strong>High Concept:</strong>
-Help the pirates collect coins and get back home to Skullocto Island
-</li>
+    <li><strong>Theme:</strong>
+    Pirate
+    </li>
 
-<li><strong>Theme:</strong>
-Pirate
-</li>
+    <li><strong>Mandated Variety:</strong>
+    Side-Scroller, Deterministic
+    </li>
 
-<li><strong>Mandated Variety:</strong>
-Side-Scroller, Deterministic, 
-</li>
+    <li><strong>Prototype Goal:</strong>
+    Camera movement. The camera should follow the ship as it moves through the game.
+    </li>
 
-<li><strong>Prototype Goal:</strong>
-Camera movement. The camera should follow the ship as it moves through the game.
-</li>
+    <li><strong>Player Experience Goals:</strong>
+    What experience do you want players to have when playing your game?
+    </li>
 
-<li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
-</li>
+    <li><strong>Gameplay:</strong>
+    A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+    </li>
 
-<li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
-</li>
+    <li><strong>Strategies:</strong>
+    What player strategies do you expect will be effective at playing this game?
+    </li>
 
-<li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
-</li>
+    <li><strong>Story/Setting/Premise:</strong>
+        The pirates have been been pillaging and collecting treasure. Help them get back home to Skullocto Island and collect coins along the way. 
+    </li>
 
-<li><strong>Story/Setting/Premise:</strong>
-    The pirates have been been pillaging and collecting treasure. Help them get back home to Skullocto Island and collect coins along the way. 
-</li>
+    <li><strong>Target Audience:</strong>
+    A single sentence that describes the demographic you're trying to reach.
+    </li>
 
-<li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
-</li>
+    <li><strong>Play Time:</strong>
+    How long does your game take to play?
+    </li>
 
-<li><strong>Play Time:</strong>
-How long does your game take to play?
-</li>
-
-</ul>
+    </ul>
 </div>
 
 <!-- main.js must come at the end since it expects the HTML to have been created. -->
