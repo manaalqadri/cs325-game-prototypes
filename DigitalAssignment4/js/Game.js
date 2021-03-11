@@ -73,8 +73,8 @@ export class Game extends Phaser.Scene {
 
         for (let i = 0; i < 1; i++)
         {
-            let xPos = Phaser.Math.Between(0, 0);
-            let yPos = Phaser.Math.Between(0, 0);
+            let xPos = Phaser.Math.Between(70, 770);
+            let yPos = Phaser.Math.Between(50, 560);
 
             if(xPos % 2 == 0)
             {
