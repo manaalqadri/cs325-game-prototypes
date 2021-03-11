@@ -101,6 +101,11 @@ export class Game extends Phaser.Scene {
             this.scene.gameOver();
             this.score--;
             });
+
+        if(this.score.text == "5")
+        {
+            this.scene.gameWin();
+        }
     }
 
     clickHandler (pointer, box)

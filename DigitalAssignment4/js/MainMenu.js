@@ -6,8 +6,6 @@ export class MainMenu extends Phaser.Scene {
         // The parameter to super() is the name used when switching states,
         // as in `this.scene.start(...)`.
         super( 'MainMenu' );
-        
-        this.music = null;
 	    this.playButton = null;
 	}
     
@@ -15,10 +13,7 @@ export class MainMenu extends Phaser.Scene {
 
         //	We've already preloaded our assets, so let's kick right into the Main Menu itself.
         //	Here all we're doing is playing some music and adding a picture and button
-        //	Naturally I expect you to do something significantly better :)
-
-        this.music = this.sound.add( 'titleMusic' );
-        this.music.play();
+        //	Naturally I expect you to do something significantly better :
 
         this.add.sprite( 0, 0, 'titlePage' ).setOrigin(0,0);
         
@@ -32,7 +27,6 @@ export class MainMenu extends Phaser.Scene {
     // The callback for the button.
     startGame() {
         //	Ok, the Play Button has been clicked or touched, so let's stop the music (otherwise it'll carry on playing)
-        this.music.stop();
 
         //	And start the actual game
         this.scene.start( 'Game' );
