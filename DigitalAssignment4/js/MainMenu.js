@@ -1,4 +1,4 @@
-import {Button} from './button.js';
+import {Button} from './Button.js';
 
 export class MainMenu extends Phaser.Scene {
 
@@ -6,6 +6,8 @@ export class MainMenu extends Phaser.Scene {
         // The parameter to super() is the name used when switching states,
         // as in `this.scene.start(...)`.
         super( 'MainMenu' );
+        
+        this.music = null;
 	    this.playButton = null;
 	}
     
@@ -13,11 +15,13 @@ export class MainMenu extends Phaser.Scene {
 
         //	We've already preloaded our assets, so let's kick right into the Main Menu itself.
         //	Here all we're doing is playing some music and adding a picture and button
-        //	Naturally I expect you to do something significantly better :
+        //	Naturally I expect you to do something significantly better :)
+
+        this.music = this.sound.add( 'titleMusic' );
 
         this.add.sprite( 0, 0, 'titlePage' ).setOrigin(0,0);
         
-        this.playButton = new Button( this, 400, 400, 'playButton', this.startGame, this, 'over', 'out', 'down' );
+        this.playButton = new Button( this, 400, 300, 'playButton', this.startGame, this, 'over', 'out', 'down' );
     }
 
     update() {
