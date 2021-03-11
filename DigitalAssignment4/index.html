@@ -23,16 +23,22 @@ body
 
 <ul>
 <li><strong>Originality:</strong>
-Whats original about your game?
+Reitrating DA2: The first iteration, I had just the game without a preoloader or main menu, and when the score was collected, it went to the negative. It also had the "shaker" as exclusively one of the blue moons.
+This time around, I implemented a preloader and main menu. I also switched the scoring to go in the positive and not count the shaker when found. I guess tjhe title is a bit misleading, with the purpose now being 
+"AVOID the shaker" than "find the shaker". I adjusted the randomness of the moonchild to be within the borders, else they would have generated above the border and scoring. I also moved the button to be in
+the center so that it replaces the preloader. There is now a popup to indicate a game over, there is also one to show the winning (when all but the shaker is clicked). And the shaker can now be either blue or yellow.
+I also took out the music.
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+I use a lot of randomness in the game. choosing the shaker for example, as well as generating the moonchildren. There was a lot of trial and error in finding the sweet spot of generating the sprites. I was also trying
+to implement a change of characters but thta proved to be way above what I could do. I needed a little more time for research on. I might get it in a few more days. using if statements has, for some reason, been a bit challenging.
+I think I need to research more on keys to make it work.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
+I got closer to what I wanted this game to be intially. getting the popup to show up was a bit difficult, I got the game over sign to show up but the game won sign isn't showing up like I thought it would. I also wanted the popups to
+lead back to teh main menu, but the click handler isn't recognizing it. I need to look more into interactivity with objects.
 </li>
 
 <li><strong>Prototype Assets:</strong>
@@ -40,38 +46,31 @@ Did you make your prototype assets from scratch? Did you borrow them? Cite your 
 <ul>
 <li>Loading screen: self-made</li>
 <li>Button: Phaser example <a href="https://phaser.io/examples/v2/buttons/action-on-click">Action On Click</a></li>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
-<li>Music: "Poppers and Prosecco" Kevin MacLeod (<a href="incompetech.com">incompetech.com</a>). Licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons: By Attribution 3.0 License</a></li>
+<li>Sprites: Selfmade</li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
 Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
 <ul>
-<li>The code for this example is adapted from the <a href="https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic">Phaser Basic Project Template</a>.</li>
-<li>I updated to to Phaser 3 Scenes using <a href="https://phaser.io/examples/v3/view/scenes/changing-scene-es6">this example</a>.</li>
-<li>The button code is based on <a href="https://phaser.discourse.group/t/buttons-in-phaser-3/1321/9">this code</a> I found in the forum.</li>
+<li> I used the minimal-class template and DA2</li>>
 </ul>
 </li>
 
 <li><strong>High Concept:</strong>
-A one-sentence summary of your game.
-</li>
-
-<li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
+Find all the moon childeren without clicking on the shaker.
 </li>
 
 <li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
+Iteration of DA2
 </li>
 
 <li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
+Exploring the extent of randomness
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
+This game is nothing but luck. So there is a bit of a gambling feel without putting anything down.
 </li>
 
 <li><strong>Gameplay:</strong>
