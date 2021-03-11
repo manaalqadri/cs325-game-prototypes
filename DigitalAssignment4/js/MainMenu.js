@@ -16,7 +16,7 @@ export class MainMenu extends Phaser.Scene {
         //	Here all we're doing is playing some music and adding a picture and button
         //	Naturally I expect you to do something significantly better :)
         this.add.sprite( 0, 0, 'titlePage' ).setOrigin(0,0);
-        this.playButton = new Button( this, 400, 300, 'playButton', this.startGame, this, 'over', 'out', 'down' );
+        this.playButton = new Button( this, 400, 400, 'playButton', this.startGame, this, 'over', 'out', 'down' );
     }
 
     update() {
