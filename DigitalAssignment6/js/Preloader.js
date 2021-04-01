@@ -39,12 +39,13 @@ export class Preloader extends Phaser.Scene {
         this.load.atlas('envelope', 'assets/envelopeLetterWithStory.png', 'assets/itemsButton.json');
         this.load.atlas('pantheon', 'assets/pantheon.png', 'assets/itemsButton.json');
         this.load.atlas('wolf', 'assets/wolfStatue.png', 'assets/itemsButton.json');
+        this.load.atlas('lilyVase', 'assets/lilyVase.png', 'assets/itemsButton.json');
 
         //	+ lots of other required assets here
         this.load.image('romeStory', 'assets/romeStory.png');
         this.load.image('pantheonImage', 'assets/pantheon.jpg');
         this.load.image('wolfStatueImage', 'assets/wolfStatueImage.jpg');
-
+        this.load.image('lilyImage', 'assets/liliesInAVase.png');
 
     }
 
