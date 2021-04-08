@@ -1,7 +1,6 @@
 import "./phaser.js";
 import {Boot} from "./Boot.js";
 import {Game} from "./Game.js";
-import {SceneB} from "./Game.js";
 import {MainMenu} from "./MainMenu.js";
 import {Preloader} from "./Preloader.js";
 
@@ -25,6 +24,6 @@ const game = new Phaser.Game({
     width: 800,
     height: 600,
     // The game starts the first scene in the scene array.
-    scene: [ Boot, Preloader, MainMenu, Game, SceneB ],
+    scene: [ Boot, Preloader, MainMenu, Game ],
     physics: { default: 'arcade' },
     });

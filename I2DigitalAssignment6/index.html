@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="da6.css">
+
+            <title>DA6: The Disappearence of Dr. Viator</title>
+        </head>
+
+        <body>
+            <div id="game"></div>
+            
+            <h2>The Disappearence of Dr. Viator</h2>
+            
+<div id="readme">
+    <h3>Originality</h3>
+    <li>This game isn't original in the concept, it's a point and click game where you look for clickable items and it plays
+        like a hidden objects game. I intended to place more originality through the game set up; I was hoping to get more rooms,
+        more objects, and more story involved. I should be able to do that with the next iteration as I now have a better understanding
+        on how to implement the game. 
+    </li>
+
+    <h3>Technical Merit</h3>
+    <li>Buttons and functions. The entire game is a group of buttons working with each other. I think the way I implemented the
+        buttons is a bit tedious, I made a function for each one, one to open the clue and then another function to close.
+        It wasn't until later that I realized that I could probably merge them into one function and pass through the game object.
+        I will be working towards making it more intuitive, code-wise. 
+        To hide the objects, since I didn't want to destroy them, I moved to the side of the screen. So they still exist, but hidden.
+        This is extremely inefficient but I couldn't find a better way to do it. So, currently, clicking an item just creates a new instance
+        and I'm sure at some point, it would make the game overbearing as the images are just getting thrown to a pile.
+    </li>
+
+    <h3>Prototype Postmortem:</h3>
+    <li>
+        I learned the usage of buttons using .json files. It was a lot easier than I thought it would be. I was apprehensive in using
+        the type because I was afraid of editing the file templates. Everything turned out well, I also figured out that I wouldn't have to
+        make a file for each button. I made a "group" that used the same format and just made sure every button I create thereafter matched
+        the file criteria. It worked well for the most part, but for bigger sized items I'll have to make a new template. 
+    </li>
+
+    <h3>Prototype Assets:</h3>
+    <ul>
+    <li>90% of the art is all unique (made by myself)</li>
+    <li>Images that clues lead to:
+        <ul>
+        <li><a href="https://www.decorist.com/static/finds/product_images/full_size/260273-faux-white-calla-lilies-in-glass-vase-c-copy.9d1a0562fcf624f1e2845f9a411dcd0d.png">Lilies</a></li>
+        <li><a href="https://upload.wikimedia.org/wikipedia/commons/0/06/Rome_Pantheon_front.jpg">Pantheon</a></li>
+        <li><a href="https://m.media-amazon.com/images/I/61LuhLrY0UL._AC_SX466_.jpg">Wolf Statue</a></li>
+        <li><a href="https://www.ducksters.com/history/ancient_rome/romulus_and_remus.php">Romulus and Remus Story</a></li>
+        </ul>
+    </li>
+    </ul>
+
+    <h3>Prototype Closest Other Game:</h3>
+    <li>N/A - I made the game based on Flash based games I played when I was younger, I don't have links to those though.</li>
+
+    <h3>High Concept:</h3>
+    <li>Find where Dr. Viator disappeared to using the clues around the room.</li>
+
+    <h3>Theme:</h3>
+    <li>N/A</li>
+
+    <h3>Mandated Variety:</h3>
+    <li>Input: Clickable Buttons</li>
+    <li>Randomness: Deterministic</li>
+    <li>Play Styles: Explorer, Storyteller</li>
+    <li>Genres: Point and Click, Hidden Object</li>
+
+    <h3>Prototype Goal:</h3>
+    <li>Have clues that show something and have it hide when closed. I think my prototype did this, just not as well as it could have</li>
+
+    <h3>Player Experience Goals:</h3>
+    <li>Learning about new places. I've always been interested in using games as educational tools. I think the range we currently have for educational purposes
+        feels a little gimmicky and so don't get played with fervor. I want to create games that are fun to play, nice to look at, and are engaging so that people keep coming
+        back to play and learn a little more, or come back to play because it was fun.
+    </li>
+
+    <h3>Gameplay:</h3>
+    <li>The player clicks the buttons around the room and tries to figure out the city/country based onn the clues shown (in a finished game, there would be a box to input
+        guesses). The player can use the internet to their heart's content to search how the clues all relate to each other and in the process learn more about different countries
+        or different cities. For this prototype, for example, the lilies on the table reference Italy's national flower.  
+    </li>
+
+    <h3>Strategies:</h3>
+    <li>Items will "light up" when hovered over to show it's clickable. Moving the mouse around the screen helps in finding clues.
+    </li>
+
+    <h3>Story/Setting/Premise:</h3>
+      <li>Dr. Viator, the famous historian, has suddenly disappeared. No one knows where she could be! The media is speculating that she's been kidnapped. There are some that say she's messed with 
+          something big and put her nose in business she wasn't meant to know (she does that a lot). The police think she could have been murdered. 
+          As her new assistant, you are the first suspect. She mentioned taking a vacation soon, she probably forgot to tell you when that would be.
+          Find Dr. Viator to clear your name. Where could she be? 
+    </li>
+
+    <h3>Target Audience:</h3>
+    <li>Anyone curious about different places</li>
+
+    <h3>Play Time:</h3>
+        <li>Ideally more than 10minutes, but this particular game would take at most 5 minutes.</li>
+
+    </ul>
+</div>
+
+<!-- main.js must come at the end since it expects the HTML to have been created. -->
+<script src="js/main.js" type="module"></script>
+</body>
+</html>
