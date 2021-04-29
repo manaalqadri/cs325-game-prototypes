@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <link rel="stylesheet" href="I2da7.css">
+
+            <title>DA7: Split Maze</title>
+        </head>
+
+        <body>
+            <div id="game"></div>
+            
+            <h2>Split Maze</h2>
+            
+<div id="readme">
+    <h3>Originality</h3>
+        <li>I am not sure of the originality of this game. I was most likely influeneced by puzzle games I used to play. A completed game would
+            have more shapes, similar to those pipe games or train track building games. The board would allow for a snapping feature so that it's
+            easier to place the pieces or buttons that rotate through the shapes. There would be a feature to make sure that once a piece is
+            confirmed, it wouldn't be able to move again. 
+        </li>
+
+    <h3>Technical Merit</h3>
+        <li>The drag and drop functionality was something new I learned for this implementation. I found out buttons cann be dragged and dropped. 
+            I was trying to figure out if they could hold a collision and I am still working on trying to figure out how to make it work. 
+        </li>
+
+    <h3>Prototype Postmortem:</h3>
+        <li>
+            I am not sure of the originality of this game. I was most likely influeneced by puzzle games I used to play. A completed game would
+            have more shapes, similar to those pipe games or train track building games. The board would allow for a snapping feature so that it's
+            easier to place the pieces or buttons that rotate through the shapes. There would be a feature to make sure that once a piece is
+            confirmed, it wouldn't be able to move again.  
+            The drag and drop functionality was something new I learned for this implementation. I found out buttons cann be dragged and dropped. I 
+            was trying to figure out if they could hold a collision and I am still working on trying to figure out how to make it work.
+            It wasn't until later I thought to have move options highlighted. Similar to how some online chess games are played. This way I could show
+            the player where to go without them having to think about what is and isn't a legal move.
+        </li>
+
+    <h3>Prototype Assets:</h3>
+        <ul>
+            <li>Most all of the art is unique (made by myself)</li>
+            <li>Play Button: Provided in template, I edited over it to match the UI</li>
+        </ul>
+
+    <h3>Prototype Closest Other Game:</h3>
+        <li>Code References:
+            <ul>
+                <li><a href="https://labs.phaser.io/edit.html?src=src%5Cinput%5Cdragging%5Cstack%20of%20cards.js">Dragging of objects</a></li>
+                <li><a href="https://labs.phaser.io/edit.html?src=src/physics/arcade/collision%20direction.js&v=3.54.0">Collisions</a></li>
+            </ul>
+        </li>
+
+    <h3>High Concept:</h3>
+        
+
+    <h3>Theme:</h3>
+        <li>N/A</li>
+
+    <h3>Mandated Variety:</h3>
+        <li>Input: Mouse</li>
+        <li>Randomness: Deterministic</li>
+        <li>Play Styles: Competitors</li>
+        <li>Genres: Drag and Drop</li>
+
+    <h3>Prototype Goal:</h3>
+        <li>This prototype laid the foundation, but there was a lot more that I wanted to do. I wanted to be able to create collisions so that the ball wouldn't be able
+            to go over the borders place. I also wanted the borders to be placed once and not move again. Right now it plays like a digital analog game.
+        </li>
+
+    <h3>Player Experience Goals:</h3>
+        <li>I want the players to feel a sort of competitveness as they go through the game. 
+        </li>
+
+    <h3>Gameplay:</h3>
+        <li>There are two types of players that are categorized by color.
+            Blue: This player controls the ball. Their goal is to get to the goal that is blue while trying to avoid getting pushed to the orange goal.
+            Orange: This player controls the borders. Their goal is to guide the player to their orange goal. There are a limited number of borders so they have to use their pieces wisely
+
+            Each player can put/move at most, 2 pieces/spaces.
+            The ball can more in any direction, up, down, left, right, and diagonally. 
+        </li>
+
+    <h3>Strategies:</h3>
+        <li>Blue players can move endlessly until the orange players run out of pieces. At that point, it's a straight path to their own goal
+        </li>
+
+    <h3>Story/Setting/Premise:</h3>
+        <li> N/A
+        </li>
+
+    <h3>Target Audience:</h3>
+        <li>People who like games like checkers or those peg board games</li>
+
+    <h3>Play Time:</h3>
+        <li>Vastly depends on players and skill levels. A game could last for more than 5 minutes.</li>
+
+    </ul>
+</div>
+
+<!-- main.js must come at the end since it expects the HTML to have been created. -->
+<script src="js/main.js" type="module"></script>
+</body>
+</html>
