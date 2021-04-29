@@ -33,20 +33,20 @@ export class Game extends Phaser.Scene {
         this.physics.world.setBounds(0, 0, 800, 600);
 
         this.board = this.physics.add.staticGroup();
-        for (var i = 16; i < 700; i+=80)
+        for (var i = 16; i < 680; i+=80)
         {
             //this.board.create(i, 16, 'board').refreshBody();
             for (var j = 16; j < 600; j+=80)
             {
                 this.board.create(i, j, 'board').refreshBody();
-                /*if(i == 16 || i == 704)
+                if((i == 16 || i == 656) && j < 576)
                 {
                     this.add.image(i, j, 'stickV').setOrigin(0);
                 }
-                if(j == 16 || j == 624)
+                if((j == 16 || j == 576) && i < 656)
                 {
-                    this.add.image(i, j, 'stickV').setOrigin(0);
-                }*/
+                    this.add.image(i, j, 'stickH').setOrigin(0);
+                }
 
             }
         }
@@ -56,8 +56,8 @@ export class Game extends Phaser.Scene {
 
         for(var numberOfBorders = 0; numberOfBorders < 15; numberOfBorders++)
         {
-            this.stickH = new Button( this, 700, 250 - (numberOfBorders*8), 'stickH', this,).setInteractive();
-            this.stickV = new Button( this, 675 + (numberOfBorders*8), 325, 'stickV', this,).setInteractive();
+            this.stickH = new Button( this, 720, 250 - (numberOfBorders*7), 'stickH', this,).setInteractive();
+            this.stickV = new Button( this, 685 + (numberOfBorders*7), 325, 'stickV', this,).setInteractive();
 
             this.input.setDraggable(this.stickH);
             this.input.setDraggable(this.stickV);
