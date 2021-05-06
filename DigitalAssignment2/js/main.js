@@ -24,28 +24,35 @@ class MyScene extends Phaser.Scene
         this.load.image('ground', 'assets/ground.png');
         this.load.spritesheet('player', 'assets/player.png', { frameWidth: 40, frameHeight: 54 });
         this.load.image('bkgd', 'assets/bkgd.png');
+
+        this.load.image('npc1', 'assets/npc1.png');
+		this.load.image('npc2', 'assets/npc2.png');
+		this.load.image('npc3', 'assets/npc3.png');
+		this.load.image('npc4', 'assets/npc4.png');
     }
     
     create() 
     {
+        this.cameras.main.setBounds(0, 300, 800, 300);
+        this.physics.world.setBounds(0, 0, 800, 300);
+
         this.add.image(400, 300, 'bkgd');
 
+
+        this.add.image(400, 300, 'npc1').setInteractive();
+        this.add.image(400, 300, 'npc2').setInteractive();
+        this.add.image(400, 300, 'npc3').setInteractive();
+        this.add.image(400, 300, 'npc4').setInteractive();
 
         platforms = this.physics.add.staticGroup();
         platforms.create(400, 600, 'ground').refreshBody();
         platforms.create(400, 550, 'ground').refreshBody();
         platforms.create(400, 500, 'ground').refreshBody();        
 
-
-        platforms.create(900, 350, 'ground').refreshBody();   
-        platforms.create(-100, 250, 'ground').refreshBody();   
-        platforms.create(80, 100, 'ground').refreshBody();   
-        platforms.create(1000, 175, 'ground').refreshBody();   
-
         // Animation set
         this.anims.create({
             key: 'walk',
-            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 1, 2, 3, 4, 5, 6, 7, 80] }),
+            frames: this.anims.generateFrameNumbers('player', { frames: [ 0, 1, 2, 3, 4, 5, 6, 7, 8] }),
             frameRate: 10,
             repeat: -1
         });
@@ -56,7 +63,7 @@ class MyScene extends Phaser.Scene
             frameRate: 10,
         });
 
-        player = this.physics.add.sprite(100, 450, 'player');
+        player = this.physics.add.sprite(100, 300, 'player');
         player.body.setGravityY(300)
         player.body.setSize(player.width, player.height-8);
 
@@ -66,6 +73,9 @@ class MyScene extends Phaser.Scene
         player.play('walk');
 
         cursors = this.input.keyboard.createCursorKeys();
+
+        this.cameras.main.startFollow(player, true, 0.05, 0.05);
+        this.cameras.main.followOffset.set(-300, 0);
     }
     
     update() 
@@ -103,7 +113,7 @@ const game = new Phaser.Game(
     type: Phaser.AUTO,
     parent: 'game',
     width: 800,
-    height: 600,
+    height: 300,
     scene: MyScene,
     physics: { default: 'arcade' },
 });
